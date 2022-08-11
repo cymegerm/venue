@@ -12,6 +12,8 @@
   "private": true,
   "dependencies": {
     "@nrwl/next": "14.5.4",
+    "@tanstack/react-query": "^4.0.10",
+    "@tanstack/react-query-devtools": "^4.0.10",
     "core-js": "^3.6.5",
     "gaxios": "^5.0.1",
     "next": "12.2.3",
