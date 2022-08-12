@@ -8,6 +8,7 @@
     "start": "nx serve",
     "build": "nx build",
     "test": "nx test",
+    "tailwind:dev": "npx tailwindcss -i ./apps/venue/tailwind/input.css -o ./apps/venue/tailwind/output.css --watch",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
     "prepare": "husky install"

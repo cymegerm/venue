@@ -16,6 +16,12 @@ export function Index() {
               Welcome venue 👋
             </h1>
           </div>
+          <div className="w-72 pt-8">
+            <img
+              src="https://newk.mo.cloudinary.net/sim2.jpg"
+              alt="beau gosse de course"
+            />
+          </div>
 
           <div id="hero" className="rounded">
             <div className="text-container">
