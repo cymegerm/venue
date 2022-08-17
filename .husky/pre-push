@@ -1,7 +1,6 @@
 #!/usr/bin/env sh
 . "$(dirname -- "$0")/_/husky.sh"
 
-npm run storybook
 npm run test-storybook
 npm run build
 # npm run e2e
