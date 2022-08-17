@@ -7,5 +7,6 @@ export default {
     '^.+\\.[tj]sx?$': ['babel-jest', { presets: ['@nrwl/next/babel'] }],
   },
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx'],
+  modulePathIgnorePatterns: ['<rootDir>/dist'],
   coverageDirectory: '../../coverage/apps/venue',
 };
