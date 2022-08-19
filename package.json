@@ -6,7 +6,7 @@
   "author": "Simon St-Germain",
   "scripts": {
     "start": "nx serve",
-    "start:all": "concurrently -r -g -k \"npm run storybook\" \"npm run start\"",
+    "start:all": "npx concurrently -r -g -k \"npm run storybook\" \"npm run start\"",
     "build": "nx build",
     "test": "nx test",
     "lint": "nx lint",
@@ -69,7 +69,6 @@
     "babel-jest": "27.5.1",
     "babel-loader": "^8.2.5",
     "concurrently": "^7.3.0",
-    "cypress": "^10.6.0",
     "eslint": "~8.15.0",
     "eslint-config-next": "12.2.3",
     "eslint-config-prettier": "8.1.0",
