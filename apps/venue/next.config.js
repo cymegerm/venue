@@ -1,5 +1,3 @@
-import path from 'path';
-
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const withNx = require('@nrwl/next/plugins/with-nx');
 
@@ -13,9 +11,6 @@ const nextConfig = {
     svgr: false,
   },
   output: 'standalone',
-  experimental: {
-    outputFileTracingRoot: path.join(__dirname, '../../'),
-  },
 };
 
 module.exports = withNx(nextConfig);
