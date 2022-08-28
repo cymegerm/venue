@@ -11,6 +11,7 @@ const nextConfig = {
     svgr: false,
   },
   output: 'standalone',
+  basePath: '/apps/venue',
 };
 
 module.exports = withNx(nextConfig);
