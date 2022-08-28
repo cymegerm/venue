@@ -43,6 +43,7 @@ testem.log
 Thumbs.db
 
 # Nx
+false
 migrations.json
 
 # Next.js
