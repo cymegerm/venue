@@ -10,8 +10,9 @@ const nextConfig = {
     // See: https://github.com/gregberge/svgr
     svgr: false,
   },
-  output: 'standalone',
+  reactStrictMode: true,
   basePath: '/apps/venue',
+  output: 'standalone',
 };
 
 module.exports = withNx(nextConfig);
