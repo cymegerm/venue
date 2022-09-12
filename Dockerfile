@@ -16,9 +16,16 @@ RUN \
 
 # Rebuild the source code only when needed
 FROM node:14-alpine AS builder
-WORKDIR /app
+WORKDIR /app/apps/venue
+COPY --from=deps /app/package.json ./
 COPY --from=deps /app/node_modules ./node_modules
-COPY . .
+COPY . ../../
+
+# Replace the Nx version of the Next config file with the non-Nx version
+RUN rm next.config.js
+RUN mv next.config-docker.js next.config.js
+
+RUN ls
 
 # Next.js collects completely anonymous telemetry data about general usage.
 # Learn more here: https://nextjs.org/telemetry
@@ -28,7 +35,7 @@ ENV NEXT_TELEMETRY_DISABLED 1
 # RUN yarn build
 
 # If using npm comment out above and use below instead
-RUN npm run build
+RUN npm run build:docker
 
 # Production image, copy all the files and run next
 FROM node:14-alpine AS runner
@@ -38,24 +45,16 @@ ENV NODE_ENV production
 # Uncomment the following line in case you want to disable telemetry during runtime.
 ENV NEXT_TELEMETRY_DISABLED 1
 
-# RUN addgroup -g 1001 -S nodejs
-# RUN adduser -S nextjs -u 1001
-
 RUN addgroup --system --gid 1001 nodejs
 RUN adduser --system --uid 1001 nextjs
 
 # You only need to copy next.config.js if you are NOT using the default configuration
-COPY --from=builder /app/node_modules/next ./node_modules/next
-COPY --from=builder /app/dist/apps/venue/next.config.js ./
-COPY --from=builder /app/dist/apps/venue/public ./public
+COPY --from=builder /app/apps/venue/next.config.js ./
 
 # Automatically leverage output traces to reduce image size
 # https://nextjs.org/docs/advanced-features/output-file-tracing
-COPY --from=builder --chown=nextjs:nodejs /app/dist/apps/venue/.next/standalone ./
-COPY --from=builder --chown=nextjs:nodejs /app/dist/apps/venue/.next/static ./.next/static
-
-# RUN sed -i "s|localhost|https://random-subdomain.us-east-2.awsapprunner.com|g" ./server.js
-# RUN cat ./server.js
+COPY --from=builder --chown=nextjs:nodejs /app/apps/venue/.next/standalone ./
+COPY --from=builder --chown=nextjs:nodejs /app/apps/venue/.next/static ./.next/static
 
 USER nextjs
 

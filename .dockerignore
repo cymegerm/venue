@@ -2,7 +2,17 @@ Dockerfile
 .dockerignore
 npm-debug.log
 README.md
+nx.json
+workspace.json
+**/project.json
+migrations.json
+copilot
 node_modules
+tools
+**/public
+stories
+storybook-static
+.storybook
 .next
 .git
 .github

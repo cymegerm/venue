@@ -8,6 +8,7 @@
     "start": "nx serve",
     "start:all": "concurrently -r -g -k \"npm run storybook\" \"npm run start\"",
     "build": "nx build",
+    "build:docker": "next build",
     "test": "nx test",
     "lint": "nx lint",
     "e2e": "nx e2e",
