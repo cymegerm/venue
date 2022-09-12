@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ['./apps/venue/**/*.{html,ts,tsx}'],
+  content: ['./**/*.{html,ts,tsx}'],
   theme: {
     extend: {},
   },
