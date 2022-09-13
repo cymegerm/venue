@@ -13,6 +13,7 @@
     "lint": "nx lint",
     "e2e": "nx e2e",
     "tailwind:dev": "npx tailwindcss -i ./apps/venue/tailwind/input.css -o ./apps/venue/tailwind/output.css --watch",
+    "tailwind": "npx tailwindcss -i ./tailwind/input.css -o ./tailwind/output.css",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
     "test-storybook": "test-storybook",
