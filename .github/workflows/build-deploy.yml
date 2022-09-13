@@ -28,6 +28,5 @@ jobs:
         with:
           command: deploy
           app: venue
-          svc: venue-next
           env: test
           force: false
