@@ -17,7 +17,7 @@ jobs:
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v1
         with:
-          role-to-assume: arn:aws:iam::520974280600:role/venue-test-github-actions-role
+          role-to-assume: arn:aws:iam::520974280600:role/OIDC-github
           aws-region: us-east-2
       - uses: ksivamuthu/aws-copilot-github-action@v0.0.1
         with:
