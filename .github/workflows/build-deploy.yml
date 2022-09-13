@@ -23,7 +23,7 @@ jobs:
         with:
           command: install
       - run: |
-          copilot --version
+          copilot svc deploy venue-next
       - uses: cymegerm/aws-copilot-github-action@v0.0.1
         with:
           command: svc deploy
