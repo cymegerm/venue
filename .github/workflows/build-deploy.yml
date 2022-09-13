@@ -23,11 +23,12 @@ jobs:
         with:
           command: install
       - run: |
-          copilot svc deploy venue-next
+          copilot --version
       - uses: cymegerm/aws-copilot-github-action@v0.0.1
         with:
-          command: svc deploy
+          command: deploy
           app: venue
           svc: venue-next
+          type: "Load Balanced Web Service"
           env: test
           force: false
