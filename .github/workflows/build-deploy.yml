@@ -19,12 +19,12 @@ jobs:
         with:
           role-to-assume: arn:aws:iam::520974280600:role/OIDC-github
           aws-region: us-east-2
-      - uses: cymegerm/aws-copilot-github-action@latest
+      - uses: cymegerm/aws-copilot-github-action@v0.0.1
         with:
           command: install
       - run: |
           copilot --version
-      - uses: cymegerm/aws-copilot-github-action@latest
+      - uses: cymegerm/aws-copilot-github-action@v0.0.1
         with:
           command: svc deploy
           app: venue
