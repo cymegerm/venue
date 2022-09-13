@@ -1,10 +1,10 @@
-name: "build"
+name: 'build'
 on: # rebuild any PRs and main branch changes
   pull_request:
   push:
     branches:
       - main
-      - "releases/*"
+      - 'releases/*'
 # These permissions are needed to interact with GitHub's OIDC Token endpoint.
 permissions:
   id-token: write
@@ -19,16 +19,15 @@ jobs:
         with:
           role-to-assume: arn:aws:iam::520974280600:role/OIDC-github
           aws-region: us-east-2
-      - uses: cymegerm/aws-copilot-github-action@v0.0.2
+      - uses: cymegerm/aws-copilot-github-action@v0.0.3
         with:
           command: install
       - run: |
           copilot --version
-      - uses: cymegerm/aws-copilot-github-action@v0.0.2
+      - uses: cymegerm/aws-copilot-github-action@v0.0.3
         with:
           command: deploy
           app: venue
           svc: venue-next
-          type: "Load Balanced Web Service"
           env: test
           force: false
