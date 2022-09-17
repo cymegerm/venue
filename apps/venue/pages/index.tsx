@@ -1,4 +1,5 @@
 import styles from './index.module.css';
+import Image from 'next/image';
 import path from 'path';
 path.resolve('./next.config.js');
 
@@ -19,9 +20,17 @@ export function Index() {
             </h1>
           </div>
           <div className="w-72 pt-8">
-            <img
-              src="https://newk.mo.cloudinary.net/sim2.jpg"
+            <Image
+              src="https://newk.mo.cloudinary.net/sim2.webp"
               alt="beau gosse de course"
+              placeholder="blur"
+              blurDataURL="https://newk.mo.cloudinary.net/sim2-placeholder.webp"
+              layout="responsive"
+              width={960}
+              height={963}
+              quality={100}
+              loading="eager"
+              priority
             />
           </div>
 

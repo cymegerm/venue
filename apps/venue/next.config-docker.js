@@ -4,6 +4,10 @@ module.exports = {
     // your project has ESLint errors.
     ignoreDuringBuilds: true,
   },
+  images: {
+    domains: ['newk.mo.cloudinary.net'],
+    formats: ['image/webp'],
+  },
   reactStrictMode: true,
   basePath: '/apps/venue',
   output: 'standalone',
