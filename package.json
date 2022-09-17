@@ -51,7 +51,7 @@
     "@nrwl/web": "14.7.5",
     "@nrwl/workspace": "14.7.5",
     "@storybook/addon-actions": "^6.5.12",
-    "@storybook/addon-essentials": "^6.5.10",
+    "@storybook/addon-essentials": "^6.5.12",
     "@storybook/addon-interactions": "^6.5.10",
     "@storybook/addon-links": "^6.5.10",
     "@storybook/builder-webpack5": "^6.5.10",
