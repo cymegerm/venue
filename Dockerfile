@@ -4,6 +4,9 @@ FROM node:14-alpine AS deps
 RUN apk add --no-cache libc6-compat
 WORKDIR /app
 
+# Only install production dependencies
+ENV NODE_ENV production
+
 # Install dependencies based on the preferred package manager
 COPY package.json ./
 COPY package-lock.json ./
@@ -17,6 +20,9 @@ RUN \
 # Rebuild the source code only when needed
 FROM node:14-alpine AS builder
 WORKDIR /app/apps/venue
+
+ENV NODE_ENV production
+
 COPY --from=deps /app/package.json ./
 COPY --from=deps /app/node_modules ./node_modules
 COPY . ../../
