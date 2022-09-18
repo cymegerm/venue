@@ -10,6 +10,10 @@ const nextConfig = {
     // See: https://github.com/gregberge/svgr
     svgr: false,
   },
+  images: {
+    domains: ['newk.mo.cloudinary.net'],
+    formats: ['image/webp'],
+  },
   reactStrictMode: true,
   basePath: '/apps/venue',
   output: 'standalone',
