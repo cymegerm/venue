@@ -16,8 +16,8 @@
     "tailwind": "npx tailwindcss -i ./tailwind/input.css -o ./tailwind/output.css",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
-    "test-storybook": "test-storybook",
-    "test-storybook:watch": "test-storybook --watch",
+    "test-storybook": "test-storybook --browsers chromium firefox webkit",
+    "test-storybook:watch": "test-storybook --browsers chromium firefox webkit --watch",
     "prepare": "husky install"
   },
   "lint-staged": {
