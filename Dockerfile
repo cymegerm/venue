@@ -27,7 +27,7 @@ COPY tailwind.config.js ./
 COPY . ../../
 
 # Install packages needed by the `build:docker` script (using `next build`)
-RUN npm i --save-dev typescript @types/react
+RUN npm i --save-dev typescript @types/react @types/jest
 
 # Replace the Nx version of the Next config file with the non-Nx version
 RUN rm next.config.js
