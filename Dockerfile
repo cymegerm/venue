@@ -4,12 +4,15 @@ FROM node:14-alpine AS deps
 RUN apk add --no-cache libc6-compat
 WORKDIR /app
 
+# Only install production dependencies
+ENV NODE_ENV production
+
 # Install dependencies based on the preferred package manager
 COPY package.json ./
 COPY package-lock.json ./
 RUN \
   if [ -f yarn.lock ]; then yarn --frozen-lockfile; \
-  elif [ -f package-lock.json ]; then npm ci; \
+  elif [ -f package-lock.json ]; then npm ci --only=prod --ignore-scripts; \
   elif [ -f pnpm-lock.yaml ]; then yarn global add pnpm && pnpm i; \
   else echo "Lockfile not found." && exit 1; \
   fi
@@ -17,15 +20,18 @@ RUN \
 # Rebuild the source code only when needed
 FROM node:14-alpine AS builder
 WORKDIR /app/apps/venue
+
 COPY --from=deps /app/package.json ./
 COPY --from=deps /app/node_modules ./node_modules
+COPY tailwind.config.js ./
 COPY . ../../
+
+# Install packages needed by the `build:docker` script (using `next build`)
+RUN npm i --save-dev typescript @types/react @types/jest
 
 # Replace the Nx version of the Next config file with the non-Nx version
 RUN rm next.config.js
 RUN mv next.config-docker.js next.config.js
-
-RUN ls
 
 # Next.js collects completely anonymous telemetry data about general usage.
 # Learn more here: https://nextjs.org/telemetry
