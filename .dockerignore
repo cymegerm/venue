@@ -9,7 +9,6 @@ migrations.json
 copilot
 node_modules
 tools
-**/public
 stories
 storybook-static
 .storybook
