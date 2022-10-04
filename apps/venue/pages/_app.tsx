@@ -6,7 +6,7 @@ function CustomApp({ Component, pageProps }: AppProps) {
   return (
     <>
       <Head>
-        <title>Welcome to venue!</title>
+        <title>Venue | Concert tickets</title>
         <link
           rel="apple-touch-icon"
           sizes="120x120"
@@ -33,7 +33,7 @@ function CustomApp({ Component, pageProps }: AppProps) {
         <meta name="msapplication-TileColor" content="#ffc40d" />
         <meta name="theme-color" content="#ffffff" />
       </Head>
-      <main className="app">
+      <main className="app bg-base-content">
         <Component {...pageProps} />
       </main>
     </>
