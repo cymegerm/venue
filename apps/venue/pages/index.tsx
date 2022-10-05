@@ -8,7 +8,7 @@ export function Index() {
     // <div className={styles.page}>
     <div className="container mx-auto">
       <div className="flex flex-col items-center">
-        <h1 className="text-xl text-lime-500 pt-12">Hello User!</h1>
+        <h1 className="text-xl pt-12">Hello User!</h1>
         <div className="w-72 pt-8 pb-96">
           <Image
             className="rounded-2xl "

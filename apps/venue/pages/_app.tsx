@@ -33,7 +33,7 @@ function CustomApp({ Component, pageProps }: AppProps) {
         <meta name="msapplication-TileColor" content="#ffc40d" />
         <meta name="theme-color" content="#ffffff" />
       </Head>
-      <main className="app bg-base-content">
+      <main className="app bg-base-200">
         <Component {...pageProps} />
       </main>
     </>
