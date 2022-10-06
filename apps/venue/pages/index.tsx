@@ -1,13 +1,19 @@
-import styles from './index.module.css';
+// import styles from './index.module.css';
 import Image from 'next/image';
+import Link from 'next/link';
 import path from 'path';
+import { useSession } from 'next-auth/react';
+import LoginBtn from '@/components/login-btn';
 path.resolve('./next.config.js');
 
 export function Index() {
+  const { data: session } = useSession();
+
   return (
     // <div className={styles.page}>
     <div className="container mx-auto">
       <div className="flex flex-col items-center">
+        <LoginBtn />
         <h1 className="text-xl pt-12">Hello User!</h1>
         <div className="w-72 pt-8 pb-96">
           <Image

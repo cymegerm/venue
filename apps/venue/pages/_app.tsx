@@ -1,8 +1,13 @@
 import { AppProps } from 'next/app';
 import Head from 'next/head';
+import { SessionProvider } from 'next-auth/react';
 import './styles.css';
 
-function CustomApp({ Component, pageProps }: AppProps) {
+function CustomApp({
+  Component,
+  // @ts-ignore
+  pageProps: { session, ...pageProps },
+}: AppProps) {
   return (
     <>
       <Head>
@@ -34,7 +39,13 @@ function CustomApp({ Component, pageProps }: AppProps) {
         <meta name="theme-color" content="#ffffff" />
       </Head>
       <main className="app bg-base-200">
-        <Component {...pageProps} />
+        <SessionProvider
+          session={session}
+          refetchInterval={5 * 60}
+          basePath="/apps/venue/api/auth"
+        >
+          <Component {...pageProps} />
+        </SessionProvider>
       </main>
     </>
   );
