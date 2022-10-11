@@ -52,12 +52,15 @@ export async function getServerSideProps(context: any) {
   const { res } = context;
   const session = await getSession(context);
 
-  if (!session) {
+  console.log(`session in protected page: ${session}`);
+
+  /*if (!session) {
+    console.log('HERE!!')
     res.writeHead(302, {
       Location: '/apps/venue',
     });
     return res.end();
-  }
+  }*/
 
   return {
     props: { session },
