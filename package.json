@@ -27,7 +27,7 @@
   "private": true,
   "dependencies": {
     "@nrwl/next": "14.8.3",
-    "@tanstack/react-query": "^4.10.1",
+    "@tanstack/react-query": "^4.10.3",
     "@tanstack/react-query-devtools": "^4.10.1",
     "core-js": "^3.25.5",
     "daisyui": "^2.31.0",
