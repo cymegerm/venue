@@ -25,7 +25,6 @@ export function Index() {
               alt="beau gosse de course"
               placeholder="blur"
               blurDataURL="https://newk.mo.cloudinary.net/sim2-placeholder.webp"
-              layout="responsive"
               width={960}
               height={963}
               quality={100}
