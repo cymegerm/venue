@@ -42,7 +42,7 @@
   },
   "devDependencies": {
     "@babel/core": "^7.19.3",
-    "@mdx-js/react": "^1.6.22",
+    "@mdx-js/react": "^2.2.1",
     "@nrwl/cli": "15.5.2",
     "@nrwl/cypress": "15.5.2",
     "@nrwl/eslint-plugin-nx": "15.5.2",
