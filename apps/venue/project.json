@@ -44,7 +44,7 @@
     },
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/apps/venue"],
+      "outputs": ["{workspaceRoot}/coverage/apps/venue"],
       "options": {
         "jestConfig": "apps/venue/jest.config.ts",
         "passWithNoTests": true
